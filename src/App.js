@@ -18,7 +18,10 @@ class App extends Component {
           {/*  Je peux utiliser switch ou exact , 
           switch je dois mettre mes page dans l'ordre de plus fréquent au moin */}
           <Switch>
-            <Route path="/products" component={Products} />
+            <Route
+              path="/products"
+              render={(props) => <Products sortBy="newset" {...props} />}
+            />
             <Route path="/posts" component={Posts} />
             <Route path="/admin" component={Dashboard} />
             <Route path="/" /* exact  */ component={Home} />
